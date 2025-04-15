@@ -145,6 +145,9 @@ func NewCommandWithIOStreams(ioStream util.IOStreams) *cobra.Command {
 		NewExportCommand(commandArgs, ioStream),
 		NewRegistryCommand(ioStream, ""),
 		NewProviderCommand(commandArgs, "", ioStream),
+
+		// package
+		NewPackageCommandGroup(commandArgs, "1", ioStream),
 	)
 
 	fset := flag.NewFlagSet("logs", flag.ContinueOnError)
